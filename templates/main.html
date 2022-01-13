@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Customer Segmentation</title>
+</head>
+<body>
+    <div class="form">
+        <h1>Customer Segmentation </h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <input type="text" name="balance" placeholder="Balance" required="required"/>
+            <input type="text" name="balance_freq" placeholder="Balance Frequency"  required="required"/>
+            <input type="text" name="purchases" placeholder="Purchases" required="required"/>
+            <input type="text" name="oneoff_purchases" placeholder="One Off Purchases" required="required"/>
+            <input type="text" name="installments_purchases" placeholder="Installments Purchases" required="required"/>
+            <input type="text" name="cash_advance" placeholder="Cash Advance" required="required"/>
+            <input type="text" name="purchases_freq" placeholder="Purchases Frequency" required="required"/>
+            <input type="text" name="oneoff_purchases_freq" placeholder="One Off Purchases Frequency" required="required"/>
+            <input type="text" name="purchases_installments" placeholder="Purchases Installments Frequency" required="required"/>
+            <input type="text" name="cash_adv_freq" placeholder="Cash Advance Frequency " required="required"/>
+            <input type="text" name="cash_adv_trx" placeholder="Cash Advance Transaction" required="required"/>
+            <input type="text" name="purchase_trx" placeholder="Purchase Transaction" required="required"/>
+            <input type="text" name="credit_limit" placeholder="Credit Limit" required="required"/>
+            <input type="text" name="payments" placeholder="Payments" required="required"/>
+            <input type="text" name="min_payments" placeholder="Minimum Payments" required="required"/>
+            <input type="text" name="prc_full_pay" placeholder="Price Full Payment" required="required"/>
+            <input type="text" name="tenure" placeholder="Tenure" required="required"/>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <p class="message"><strong><h2>{{prediction_text}}</h2></strong></p>
+    </div>
+</body>
+</html>
